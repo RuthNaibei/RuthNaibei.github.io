@@ -8,11 +8,32 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.custom-shape-divider-top-1649602450 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1649602450 svg {
+  position: relative;
+  display: block;
+  width: calc(130% + 1.3px);
+  height: 215px;
+}
+
+.custom-shape-divider-top-1649602450 .shape-fill {
+  fill: #FFFFFF;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
   color: #5a656e;
+  
 }
+
 
 a {
   color: #d43076;
@@ -44,6 +65,36 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px;
   transition: all 0.4s;
 }
+.curve {
+  position: absolute;
+  height: 225px;
+  width: 100%;
+  bottom: 0;
+
+}
+
+.custom-shape-divider-bottom-1649599548 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1649599548 svg {
+  position: relative;
+  display: block;
+  width: calc(130% + 1.3px);
+  height: 215px;
+}
+
+.custom-shape-divider-bottom-1649599548 .shape-fill {
+  fill: #fff;
+}
+
+
 .back-to-top i {
   font-size: 24px;
   color: #fff;
@@ -278,10 +329,24 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/hero.jpg") top center;
+  background-color: #111;
   background-size: cover;
+  background-attachment: fixed;
   padding: 0 15px;
-  
+  animation: movedown 1s linear 1;
+  animation-delay:1s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+@keyframes movedown {
+  0%{
+    transform: translateY(-100px);
+    visibility: visible;
+  }
+  100%{
+    transform: translateY(0px);
+    visibility: visible;
+  }
 }
 #hero h1 {
   margin: 0 0 10px 0;
@@ -289,6 +354,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 56px;
   color: #fff;
+  animation: movedown 1s linear 1;
+  animation-delay:2s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
 }
 #hero h2 {
   color: #eee;
@@ -302,6 +371,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   color: #fff;
   height: 60px;
+  animation: movedown 1s linear 1;
+  animation-delay:3s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
 }
 #hero .btn-get-started:hover {
   padding-top: 10px;
@@ -329,10 +402,11 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 section {
   padding: 60px 0;
+
 }
 
 .section-bg {
-  background: linear-gradient(180deg, #f2f6f9 0%, #fff 100%);
+  background: linear-gradient(180deg, #fff 0%, #eef1f3 100%);
 }
 
 .section-title {
@@ -404,6 +478,10 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about{
+  background: linear-gradient(180deg, #fff 0%, #eef1f3 100%);
+}
+
 .about .content {
   padding: 30px 0;
 }
@@ -454,9 +532,11 @@ section {
 .about .content .count-box a:hover {
   color: #6b96be;
 }
-.about .image {
-  background: url("../img/PROFILE.jpg") center center no-repeat ;
-  background-size: cover;
+.about-image {
+  margin-top: 30%;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
   background-repeat: no-repeat;
   min-height: 10px;
 }
@@ -477,6 +557,28 @@ section {
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
+
+.custom-shape-divider-top-1649611547 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1649611547 svg {
+  position: relative;
+  display: block;
+  width: calc(117% + 1.3px);
+  height: 199px;
+}
+
+.custom-shape-divider-top-1649611547 .shape-fill {
+  fill: #111010;
+}
+
 .skills .progress {
   height: 50px;
   display: block;
@@ -508,6 +610,9 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+#resume{
+  background-color: #111;
+}
 .resume .resume-title {
   font-size: 26px;
   font-weight: 500;
@@ -740,6 +845,8 @@ section {
   bottom: calc(50% - 50px);
 }
 
+
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
@@ -794,85 +901,12 @@ section {
   padding: 0;
 }
 
-/*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
-.testimonials .testimonials-carousel, .testimonials .testimonials-slider {
-  overflow: hidden;
-}
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  min-height: 320px;
-}
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: -40px 0 0 40px;
-  position: relative;
-  z-index: 2;
-  border: 6px solid #fff;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 45px;
-  color: #2c4964;
-}
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: #6b96be;
-  margin: 0 0 0 45px;
-}
-.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: #f7d9e6;
-  font-size: 26px;
-}
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-}
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 15px 0 15px;
-  padding: 20px 20px 60px 20px;
-  background: #fff;
-  position: relative;
-  border-radius: 6px;
-  position: relative;
-  z-index: 1;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #d43076;
-}
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #d43076;
-}
-@media (max-width: 767px) {
-  .testimonials {
-    margin: 30px 10px;
-  }
-}
+
 
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
 .contact .contact-about h3 {
   font-size: 36px;
   margin: 0 0 10px 0;
@@ -1014,3 +1048,12 @@ section {
   text-align: center;
   font-size: 13px;
 }
+/*--------------------------------------------------------------
+# trial4
+--------------------------------------------------------------*/
+.body-training{
+   background: linear-gradient(180deg, #eef1f3 0%, #fff 100%);
+
+}
+
+/*animations*/
